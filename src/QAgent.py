@@ -4,7 +4,6 @@ import gym
 import numpy as np
 import tensorflow as tf
 
-import gym_pytris
 from src.utils import plotLearning
 
 MODEL_PATH = "models/"
