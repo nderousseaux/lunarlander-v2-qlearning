@@ -1,3 +1,6 @@
+import datetime
+import re
+
 import matplotlib.pyplot as plt
 import numpy as np
 import gym
@@ -35,3 +38,25 @@ def plotLearning(x, scores, epsilons, filename, lines=None):
 
     plt.savefig(filename)
     plt.close()
+
+# Fonction qui renvoie un string, complété par des espaces, de la taille de nb_car
+def fill_line(string, nb_car):
+	space_start = 4
+	return (
+		"│" +
+		" " * space_start
+		+ string
+		+ " " * (nb_car - real_len(string) - space_start - 2)
+		+ "│"
+	)
+
+# Fonction qui renvoie la longueur réelle d'un string (sans les caractères d'échappement)
+def real_len(string):	
+	return len(re.sub(r"\x1b\[[0-9;]*m", "", string))
+
+# Fonction qui retourne une barre de chargement
+def loading(i, i_max, size):
+	size -= 5
+
+	nb = int((i / i_max) * size)
+	return "[" + "#" * nb + "-" * (size - nb) + "]" + f" {round((i / i_max) * 100, 2)}%"

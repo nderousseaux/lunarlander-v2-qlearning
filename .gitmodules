@@ -1,3 +1,0 @@
-[submodule "gym_pytris"]
-	path = gym_pytris
-	url = git@github.com:nderousseaux/gym-pytris.git

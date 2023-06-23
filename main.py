@@ -1,20 +1,23 @@
 import argparse
+from termcolor import colored
 
+print("\nLoading Tensorflow...", end="\r")
 from src.QAgent import QAgent
+print(f"Loading Tensorflow... {colored('Done', 'green')}\n")
 
 def load_arguments():
   # Default arguments
   env_name = "LunarLander-v2"
-  hidden_layers = [125, 100]
+  hidden_layers = [150, 120]
   learning_rate=.001
-  epoch=500
+  epoch=2
   gamma=.99
-  epsilon=0.9
-  epsilon_dec=.995
-  epsilon_end=0
+  epsilon=1.0
+  epsilon_dec=.996
+  epsilon_end=0.01
   mem_size=1000000
   batch_size=64
-  activation_function = "softmax"
+  activation_function = "linear"
   render_during_training = False
   live_plot = True
 
