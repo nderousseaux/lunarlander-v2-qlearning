@@ -10,7 +10,7 @@ def load_arguments():
   env_name = "LunarLander-v2"
   hidden_layers = [150, 120]
   learning_rate=.001
-  epoch=2
+  epoch=30000
   gamma=.99
   epsilon=1.0
   epsilon_dec=.996
